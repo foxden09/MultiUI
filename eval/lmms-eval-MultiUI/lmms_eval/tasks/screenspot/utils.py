@@ -54,14 +54,14 @@ def screenspot_aggregation_result(results, metric):
         "images": [],
         "info": {"description": "ScreenSpot evaluation dataset"},
         "licenses": [],
-        "categories": []
+        "categories": [{"id": 1, "name": "screenspot"}]
     }
     idx = 0
     ann_id = 0
     for result in results:
         stored_results.append({"image_id": idx, "caption": result["pred"]})
         # for s in result["answer"]:
-        dataset["annotations"].append({"image_id": idx, "caption": result["instruction"], "id": ann_id})
+        dataset["annotations"].append({"image_id": idx, "caption": result["instruction"], "id": ann_id, "category_id": 1})
         ann_id += 1
 
         dataset["images"].append({"id": idx})
