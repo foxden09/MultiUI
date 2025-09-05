@@ -440,8 +440,10 @@ class Llava_OneVision(lmms):
             question_input = []
 
             for visual, context in zip(batched_visuals, batched_contexts):
-                # Initialize image_tensor to avoid UnboundLocalError
+                # Initialize variables to avoid UnboundLocalError
                 image_tensor = None
+                task_type = "text"
+                placeholder_count = 0
                 
                 if visual is None or visual == []:  # for text-only tasks.
                     visual = None
