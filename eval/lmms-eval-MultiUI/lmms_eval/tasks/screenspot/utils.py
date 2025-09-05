@@ -49,7 +49,13 @@ def screenspot_aggregation_result(results, metric):
     # 'annotation' and 'images'
     # 'annotation' exactly reproduce the original annotation
     # 'images' however only need the image id which is contained in the file name
-    dataset = {"annotations": [], "images": []}
+    dataset = {
+        "annotations": [], 
+        "images": [],
+        "info": {"description": "ScreenSpot evaluation dataset"},
+        "licenses": [],
+        "categories": []
+    }
     idx = 0
     ann_id = 0
     for result in results:

@@ -65,6 +65,7 @@ def websrc_test_aggregate_results_for_submission(results, args):
             out.update(result)
         json.dump(out, f, indent=4)
     eval_logger.info(f"Results saved to {path}.")
+    return len(results)  # Return number of processed samples
 
 
 def websrc_aggregate_results(results):
